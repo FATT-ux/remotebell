@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import close from '../assets/trash.png'
+import trashPng from '../assets/trash.png'
 import PopUp from "./PopUp";
 
 function Data ({day, dayIndex, dayRu, events}){
@@ -17,7 +17,7 @@ function Data ({day, dayIndex, dayRu, events}){
         <ul>
             {events.map((obj, index) => (
                         <li className="welcome-items" key={index}>
-                            Время {obj.time}, {obj.filepath}, {obj.duration} сек. <img src={close} alt="" className="close" />
+                            Время {obj.time}, {obj.filepath}, {obj.duration} сек. <img src={trashPng} alt="" className="close" />
                             <hr />
                         </li>
                     ))}
