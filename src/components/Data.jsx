@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import close from '../assets/trash.png'
+import PopUp from "./PopUp";
+
 function Data ({day, dayIndex, dayRu, events}){
+
+    const [state, setState] = useState(false);
+    const popUp = () =>{
+        setState(!state);
+    }
+    const close = () =>{
+        setState(false);
+    }
     return(
         <div className="welcome-inner-list">
         <h2 className="dayRu">{dayRu}</h2>
@@ -12,7 +22,8 @@ function Data ({day, dayIndex, dayRu, events}){
                         </li>
                     ))}
         </ul>
-        <button className="btn btn-add">Добавить</button>
+        <button className="btn btn-add" onClick={popUp}>Добавить</button>
+        {state == true ? <PopUp events={events} day={day} close={close} /> : null}
         </div>
     )
 }
