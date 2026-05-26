@@ -1,6 +1,7 @@
 import React from "react";
 
 function Buttons (){
+
     return(
         <div className="buttons"> 
             <div className="container">

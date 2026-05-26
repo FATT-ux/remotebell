@@ -6,13 +6,22 @@ import Schedule from "./components/schedule";
 function App () {
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(true)
+    const [audio, setAudio] = useState([])
 
     useEffect(() =>{
-        fetch('/schedules/schedules.json').then(res => res.json().then(json =>{
+        fetch('/api/schedules').then(res => res.json().then(json =>{
             setData(json);
         }).catch(err =>{
             console.warn(err);
         })).finally(() => setLoading(false));
+    }, [])
+
+    useEffect(() =>{
+        fetch('/api/audio-files').then(res => res.json().then(json =>{
+            setAudio(json);
+        }).catch(err =>{
+            console.warn(err);
+        }))
     }, [])
 
     return(

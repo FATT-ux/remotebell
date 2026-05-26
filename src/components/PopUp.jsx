@@ -1,8 +1,6 @@
 import React from "react";
 import PopUpSound from "./PopUpSound";
-import sound1 from '/audio/shooter.mp3'
-import sound2 from '/audio/guitar_vibe.mp3'
-import sound3 from '/audio/easy_vide_california.mp3'
+
 
 function PopUp ({events, day, close}) {
     return(
@@ -15,9 +13,9 @@ function PopUp ({events, day, close}) {
                 <input type="number" placeholder="Длительность сек." />
             </div>
             
-            <PopUpSound sound={sound1} name='Shooter'/>
-            <PopUpSound sound={sound2} name='Guitar Vibe'/>
-            <PopUpSound sound={sound3} name='Easy Vide California'/>
+            <PopUpSound sound="/audio/shooter.mp3" name='Shooter'/>
+            <PopUpSound sound="/audio/guitar_vibe.mp3" name='Guitar Vibe'/>
+            <PopUpSound sound="/audio/easy_vide_california.mp3" name='Easy Vide California'/>
 
             </div>
 
