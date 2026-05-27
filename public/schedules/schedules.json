@@ -6,16 +6,6 @@
       "dayRu": "Понедельник",
       "events": [
         {
-          "time": "14:20",
-          "filepath": "/audio/monday_1415.mp3",
-          "duration": 30
-        },
-        {
-          "time": "14:25",
-          "filepath": "/audio/monday_1415.mp3",
-          "duration": 30
-        },
-        {
           "time": "15:05",
           "filepath": "easy_vide_california.mp3",
           "duration": 25
