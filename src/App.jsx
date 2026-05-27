@@ -16,20 +16,13 @@ function App () {
         })).finally(() => setLoading(false));
     }, [])
 
-    useEffect(() =>{
-        fetch('/api/audio-files').then(res => res.json().then(json =>{
-            setAudio(json);
-        }).catch(err =>{
-            console.warn(err);
-        }))
-    }, [])
 
     return(
         <>
         <Header />
 
         <main className="main">
-        <Buttons />
+        <Buttons/>
         <Schedule isLoading={isLoading} data={data} />
         </main>
         </>
