@@ -21,8 +21,8 @@ function Buttons (){
     return(
         <div className="buttons"> 
             <div className="container">
-                    <button className="btn" onClick={() =>{ playAudio('bomb.mp3', 'bomb')}}>В здании бомба</button>
-                    <button className="btn" onClick={() => {playAudio('shooter.mp3', 'shooter')}}>Стрелок в здании</button>
+                    <button className="btn" onClick={() =>{ playAudio('bomb.mp3', 'bomb')}} style={{background: activeButton === 'bomb' ? 'rgb(201, 0, 0)' : 'rgb(250, 0, 0)'} }>В здании бомба</button>
+                    <button className="btn" onClick={() => {playAudio('shooter.mp3', 'shooter')}} style={{background: activeButton === 'shooter' ? 'rgb(201, 0, 0)' : 'rgb(250, 0, 0)'} }>Стрелок в здании</button>
             </div>
         </div>
     )
