@@ -108,9 +108,9 @@ ul{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     transition: all 0.3s;
+    cursor: pointer;
 }
 .popUp-sound:hover{
-    background-color: #a8c3de;
     transform: translateY(-3px);
 }
 .popUp-sound-desc{
@@ -118,4 +118,17 @@ ul{
 }
 .popup-audio{
   padding: 10px 15px;
+}
+.close-pop-up{
+    float: right;
+    padding: 10px 15px 0 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 20px;
+}
+.close-pop-up:hover{
+    opacity: 0.7;
+}
+.btn-add-event{
+    margin-top: 15px;
 }

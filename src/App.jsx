@@ -1,30 +1,42 @@
 import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 import Header from "./components/Header";
-import Buttons from "./components/Buttons";
-import Schedule from "./components/schedule";
+import AlarmComponent from "./components/AlarmComponent";
+import Schedule from "./components/Schedule/Schedule";
 
 function App () {
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(true)
     const [audio, setAudio] = useState([])
 
-    useEffect(() =>{
-        fetch('/api/schedules').then(res => res.json().then(json =>{
-            setData(json);
-        }).catch(err =>{
-            console.warn(err);
-        })).finally(() => setLoading(false));
-    }, [])
+    useEffect(() => {
+        const getData = async () =>{
+            try{
+                const res = await axios.get('/api/schedules');
+                setData(res.data);
+            } catch(err) {
+                console.warn(err);
+                toast.error('Данные не были загружены')
+            } finally{
+                setLoading(false);
+            }
+        }
+        getData();
+}, [])
 
 
     return(
         <>
-        <Header />
+            <Header />
 
-        <main className="main">
-        <Buttons/>
-        <Schedule isLoading={isLoading} data={data} />
-        </main>
+            <main className="main">
+                <AlarmComponent/>  
+                <Schedule isLoading={isLoading} data={data} />
+            </main>
+            
+            <ToastContainer position="bottom-right" autoClose={1000} />
         </>
     )
 }

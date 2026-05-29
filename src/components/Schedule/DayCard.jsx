@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import trashPng from '../assets/trash.png'
-import PopUp from "./PopUp";
+import trashPng from '../../assets/trash.png'
+import PopUp from "../PopUp/PopUp";
 
-function Data ({day, dayIndex, dayRu, events}){
+function DayCard ({day, dayIndex, dayRu, events}){
 
     const [state, setState] = useState(false);
     const [currentEvents, setCurrentEvents] = useState(events)
@@ -28,22 +28,31 @@ function Data ({day, dayIndex, dayRu, events}){
         setCurrentEvents(newEvents);
     }
     
+    const addEvent = (newEvent) =>{
+        const newEvents = [];
+        for (let i = 0; i < currentEvents.length; i++){
+            newEvents.push(currentEvents[i]);
+        }
+        newEvents.push(newEvent);
+         setCurrentEvents(newEvents);
+    }
 
     return(
         <div className="welcome-inner-list">
-        <h2 className="dayRu">{dayRu}</h2>
-        <ul>
-            {currentEvents.map((obj, index) => (
+            <h2 className="dayRu">{dayRu}</h2>
+                <ul>
+                    {currentEvents.map((obj, index) => (
                         <li className="welcome-items" key={index}>
                             Время {obj.time}, {obj.filepath}, {obj.duration} сек. <img onClick={() => deleteImg(obj.time, index)} src={trashPng} alt="" className="close" />
                             <hr />
                         </li>
                     ))}
-        </ul>
-        <button className="btn btn-add" onClick={popUp}>Добавить</button>
-        {state == true ? <PopUp events={currentEvents} day={day} close={close} /> : null}
+                </ul>
+
+            <button className="btn btn-add" onClick={popUp}>Добавить</button>
+                {state == true ? <PopUp events={currentEvents} day={day} close={close} addEvent={addEvent} /> : null}
         </div>
     )
 }
 
-export default Data
+export default DayCard

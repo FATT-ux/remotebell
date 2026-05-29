@@ -1,22 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-function Buttons (){
+function AlarmComponent (){
     
     const [activeButton, setActiveButton] = useState(null)
     const apiUrl = 'http://localhost:8000'
+    
     const playAudio = async (audioName, buttonName) => {
         if(activeButton === buttonName){
-            await fetch(`${apiUrl}/api/stop-audio`, {method: 'POST'});
+            await axios.post(`${apiUrl}/api/stop-audio`);
             setActiveButton(null);
         } else {
-            await fetch(`${apiUrl}/api/play-audio`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ filename: audioName })
-            })
+            await axios.post(`${apiUrl}/api/play-audio`, {
+                filename: audioName
+            });
             setActiveButton(buttonName);
         }
     }
+
 
     return(
         <div className="buttons"> 
@@ -28,4 +29,4 @@ function Buttons (){
     )
 }
 
-export default Buttons
+export default AlarmComponent

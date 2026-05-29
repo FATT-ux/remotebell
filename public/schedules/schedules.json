@@ -6,9 +6,9 @@
       "dayRu": "Понедельник",
       "events": [
         {
-          "time": "15:05",
-          "filepath": "easy_vide_california.mp3",
-          "duration": 25
+          "time": "12:30",
+          "filepath": "shooter.mp3",
+          "duration": 32
         }
       ]
     },
@@ -16,45 +16,13 @@
       "day": "tuesday",
       "dayIndex": 2,
       "dayRu": "Вторник",
-      "events": [
-        {
-          "time": "14:51",
-          "filepath": "/audio/easy_vide_california.mp3",
-          "duration": 60
-        },
-        {
-          "time": "14:52",
-          "filepath": "/audio/easy_vide_california.mp3",
-          "duration": 5
-        },
-        {
-          "time": "14:53",
-          "filepath": "easy_vide_california.mp3",
-          "duration": 10
-        }
-      ]
+      "events": []
     },
     {
       "day": "wednesday",
       "dayIndex": 3,
       "dayRu": "Среда",
-      "events": [
-        {
-          "time": "14:59",
-          "filepath": "easy_vide_california.mp3",
-          "duration": 5
-        },
-        {
-          "time": "15:00",
-          "filepath": "guitar_vibe.mp3",
-          "duration": 5
-        },
-        {
-          "time": "15:01",
-          "filepath": "easy_vide_california.mp3",
-          "duration": 30
-        }
-      ]
+      "events": []
     },
     {
       "day": "thursday",
