@@ -7,8 +7,8 @@ from typing import Optional
 
 import pygame.mixer
 
-SCHEDULES_PATH = Path("../public/schedules/schedules.json")
-AUDIO_DIR = Path("../public/audio")
+SCHEDULES_PATH = Path("schedules/schedules.json")
+AUDIO_DIR = Path("audio")
 CHECK_INTERVAL_SECONDS = 60
 
 

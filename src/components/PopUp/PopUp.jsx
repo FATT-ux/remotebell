@@ -38,9 +38,12 @@ function PopUp ({events, day, close, addEvent}) {
         setTime('')
         setDuration('')
         setSound('')
-
-        close()
         toast.success('Событие добавлено')
+        
+        setTimeout(()=>{
+            close()
+        }, 1000)
+        
     } catch(err){
         toast.error('Ошибка при добавлении')
     }

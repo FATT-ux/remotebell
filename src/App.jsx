@@ -16,6 +16,7 @@ function App () {
             try{
                 const res = await axios.get('/api/schedules');
                 setData(res.data);
+                toast.success("Данные успешно загружены")
             } catch(err) {
                 console.warn(err);
                 toast.error('Данные не были загружены')

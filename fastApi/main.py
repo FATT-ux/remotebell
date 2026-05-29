@@ -15,7 +15,7 @@ from models.requests.AudioRequest import AudioRequest
 from models.requests.Event import Event
 from services.ScheduleService import ScheduleService, SCHEDULES_PATH, AUDIO_DIR
 
-# Инициализация звука с обработкой ошибки
+
 try:
     pygame.mixer.init()
     SOUND_AVAILABLE = True
@@ -59,17 +59,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/audio", StaticFiles(directory="../public/audio"))
+app.mount("/audio", StaticFiles(directory="audio"))
 
 current_playing = None
 is_playing = False
-schedules_path = "../public/schedules/schedules.json"
+schedules_path = "schedules/schedules.json"
 
 
 
 @app.get("/api/audio-files")
 async def get_audio_files():
-    audio_dir = "../public/audio"
+    audio_dir = "audio"
     files = os.listdir(audio_dir)
     audio_files = [f for f in files if f.endswith(("mp3", ".wav", ".ogg", ".m4a"))]
     return {"files": audio_files}
@@ -87,7 +87,7 @@ async def play_audio(request: AudioRequest):
         }
 
     filename = os.path.basename(request.filename)
-    audio_path = os.path.join("../public/audio", filename)
+    audio_path = os.path.join("audio", filename)
 
     if not os.path.exists(audio_path):
         raise HTTPException(status_code=404, detail=f"Audio file {filename} not found")

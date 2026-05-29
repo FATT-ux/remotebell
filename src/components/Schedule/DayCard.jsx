@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import trashPng from '../../assets/trash.png'
 import PopUp from "../PopUp/PopUp";
 
@@ -14,11 +15,9 @@ function DayCard ({day, dayIndex, dayRu, events}){
         setState(false);
     }
 
-    const deleteImg = (eventTime, index) =>{
-        fetch(`/api/schedules/days/events?day=${day}&time=${eventTime}`, {
-            method: 'DELETE'
-        });
-    
+    const deleteImg = async (eventTime, index) =>{
+       await axios.delete(`/api/schedules/days/events?day=${day}&time=${eventTime}`);
+       
         const newEvents = [];
         for (let i = 0; i < currentEvents.length; i++){
             if (i !== index){

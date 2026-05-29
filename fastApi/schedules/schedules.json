@@ -4,13 +4,7 @@
       "day": "monday",
       "dayIndex": 1,
       "dayRu": "Понедельник",
-      "events": [
-        {
-          "time": "12:30",
-          "filepath": "shooter.mp3",
-          "duration": 32
-        }
-      ]
+      "events": []
     },
     {
       "day": "tuesday",
