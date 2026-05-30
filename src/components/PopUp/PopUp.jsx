@@ -26,6 +26,7 @@ function PopUp ({events, day, close, addEvent}) {
             duration: Number(duration)
         })
         
+        toast.success('Событие добавлено')
         
         if (addEvent){
             addEvent({
@@ -38,11 +39,9 @@ function PopUp ({events, day, close, addEvent}) {
         setTime('')
         setDuration('')
         setSound('')
-        toast.success('Событие добавлено')
         
-        setTimeout(()=>{
-            close()
-        }, 1000)
+
+        close()
         
     } catch(err){
         toast.error('Ошибка при добавлении')
@@ -69,7 +68,6 @@ function PopUp ({events, day, close, addEvent}) {
 
             </div>
 
-            <ToastContainer position="bottom-right" autoClose={1000} /> 
 
         </div>
     )

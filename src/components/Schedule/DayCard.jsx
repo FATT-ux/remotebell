@@ -34,6 +34,7 @@ function DayCard ({day, dayIndex, dayRu, events}){
         }
         newEvents.push(newEvent);
          setCurrentEvents(newEvents);
+         
     }
 
     return(
