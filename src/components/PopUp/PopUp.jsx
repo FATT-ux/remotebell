@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PopUpSound from "./PopUpSound";
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 
@@ -59,13 +58,12 @@ function PopUp ({events, day, close, addEvent}) {
                         <input value={time} onChange={(e) => setTime(e.target.value)} type="text" placeholder="ЧЧ:ММ" maxLength={5} />
                         <input value={duration} onChange={(e) => setDuration(e.target.value)} type="number" placeholder="Длительность сек." />
                     </div>
-            
+                    
                         <PopUpSound onSelect={setSound} sound="shooter.mp3" name='Shooter'  isSelected={sound === "shooter.mp3"} />
                         <PopUpSound onSelect={setSound} sound="guitar_vibe.mp3" name='Guitar Vibe' isSelected={sound === "guitar_vibe.mp3"} />
                         <PopUpSound onSelect={setSound} sound="easy_vide_california.mp3" name='Easy Vide California' isSelected={sound === "easy_vide_california.mp3"} />
 
                         <button className="btn btn-add btn-add-event" onClick={addSound}>Добавить событие</button>
-
             </div>
 
 

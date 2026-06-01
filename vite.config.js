@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => ({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://localhost:8000', //заменить .env
         changeOrigin: true,
       },
       '/audio': {

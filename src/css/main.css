@@ -85,9 +85,11 @@ ul{
 }
 .main-pop-up{
     width: 600px;
+    max-height: 90vh;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px 20px;
+    overflow-y: auto;
 }
 .popup-title{
     margin-top: 0px;

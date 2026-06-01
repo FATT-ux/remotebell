@@ -3,15 +3,14 @@ import axios from "axios";
 
 function AlarmComponent (){
     
-    const [activeButton, setActiveButton] = useState(null)
-    const apiUrl = 'http://localhost:8000'
-    
+    const [activeButton, setActiveButton] = useState(null);
+
     const playAudio = async (audioName, buttonName) => {
         if(activeButton === buttonName){
-            await axios.post(`${apiUrl}/api/stop-audio`);
+            await axios.post(`/api/stop-audio`);
             setActiveButton(null);
         } else {
-            await axios.post(`${apiUrl}/api/play-audio`, {
+            await axios.post(`/api/play-audio`, {
                 filename: audioName
             });
             setActiveButton(buttonName);
