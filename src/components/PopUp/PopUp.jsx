@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import axios from "axios";
 
 
-function PopUp ({events, day, close, addEvent}) {
+function PopUp ({events, day, dayRu, close, addEvent}) {
     const [time, setTime] = useState('');
     const [duration, setDuration] = useState('');
     const [sound, setSound] = useState('');
@@ -65,7 +65,7 @@ function PopUp ({events, day, close, addEvent}) {
         <div className="background-pop-up" onClick={close}>
             <div className="main-pop-up" onClick={(e) => e.stopPropagation()} >
                 <span className="close-pop-up" onClick={close}>x</span>
-                <h1 className="popup-title">{day}</h1>
+                <h1 className="popup-title">{dayRu}</h1>
                 <hr />
 
                     <div className="popup-input">

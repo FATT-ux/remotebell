@@ -50,7 +50,7 @@ function DayCard ({day, dayIndex, dayRu, events}){
                 </ul>
 
             <button className="btn btn-add" onClick={popUp}>Добавить</button>
-                {state == true ? <PopUp events={currentEvents} day={day} close={close} addEvent={addEvent} /> : null}
+                {state == true ? <PopUp events={currentEvents} day={day} close={close} addEvent={addEvent} dayRu={dayRu}/> : null}
         </div>
     )
 }

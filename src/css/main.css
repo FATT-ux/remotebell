@@ -56,6 +56,10 @@ ul{
     padding-right: 30px;
     width: 20px;
     cursor: pointer;
+    transition: all 0.3s;
+}
+.close:hover{
+    transform: scale(1.1) translateY(-2px);
 }
 
 .btn-add{
@@ -133,4 +137,48 @@ ul{
 }
 .btn-add-event{
     margin-top: 15px;
+}
+.sidebar-icon{
+    font-size: 25px;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.sidebar-icon:hover{
+    transform: scale(1.1) translateX(3px);
+    color: rgb(126, 4, 4);
+}
+.sidebar-main{
+    position: absolute;
+    border-radius: 0 10px 10px 0;
+    top: 120px;
+    width: 300px;
+    box-shadow: 22px 17px 50px 0px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    z-index: 1000;
+}
+.sidebar-input{
+    padding: 0 0 15px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-title{
+    margin-bottom: 10px;
+}
+.sidebar-input-file{
+    margin-bottom: 10px;
+}
+.side-btn{
+    background-color: blue;
+    padding: 5px;
+}
+.close-sidebar{
+    float: right;
+    padding: 5px 10px 0 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.close-sidebar:hover{
+    transform: scale(1.2) translateY(-2px);
 }
