@@ -34,7 +34,13 @@
       "day": "saturday",
       "dayIndex": 6,
       "dayRu": "Суббота",
-      "events": []
+      "events": [
+        {
+          "time": "13:20",
+          "filepath": "shooter.mp3",
+          "duration": 5
+        }
+      ]
     },
     {
       "day": "sunday",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PopUpSound from "./PopUpSound";
 import { toast, ToastContainer } from 'react-toastify';
 import axios from "axios";
@@ -8,7 +8,21 @@ function PopUp ({events, day, close, addEvent}) {
     const [time, setTime] = useState('');
     const [duration, setDuration] = useState('');
     const [sound, setSound] = useState('');
+    const [audioFiles, setAudioFiles] = useState([]);
     
+    useEffect(() => {
+    const getAudioFiles = async () => {
+        try{
+            const res = await axios.get('/api/audio-files');
+            setAudioFiles(res.data.files);
+        } catch(err) {
+            console.warn(err);
+        }
+    }
+    getAudioFiles();
+}, [])
+
+
    const addSound = async () =>{
     if (!time || !duration || !sound){
         toast.error('Заполните все поля');
@@ -58,10 +72,11 @@ function PopUp ({events, day, close, addEvent}) {
                         <input value={time} onChange={(e) => setTime(e.target.value)} type="text" placeholder="ЧЧ:ММ" maxLength={5} />
                         <input value={duration} onChange={(e) => setDuration(e.target.value)} type="number" placeholder="Длительность сек." />
                     </div>
-                    
-                        <PopUpSound onSelect={setSound} sound="shooter.mp3" name='Shooter'  isSelected={sound === "shooter.mp3"} />
-                        <PopUpSound onSelect={setSound} sound="guitar_vibe.mp3" name='Guitar Vibe' isSelected={sound === "guitar_vibe.mp3"} />
-                        <PopUpSound onSelect={setSound} sound="easy_vide_california.mp3" name='Easy Vide California' isSelected={sound === "easy_vide_california.mp3"} />
+
+                        {audioFiles.map((file) => (
+                            <PopUpSound key={file} onSelect={setSound} sound={file} name={file.replace('.mp3', '')} isSelected={sound === file} />
+                        ))}
+                        
 
                         <button className="btn btn-add btn-add-event" onClick={addSound}>Добавить событие</button>
             </div>
