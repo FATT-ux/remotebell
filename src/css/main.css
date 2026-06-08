@@ -159,12 +159,21 @@ ul{
     z-index: 1000;
 }
 .sidebar-input{
-    padding: 0 0 15px 10px;
+    padding: 0 0 0 10px;
     display: flex;
     flex-direction: column;
 }
 .sidebar-title{
-    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sidebar-title:hover{
+    text-decoration: underline;
+}
+.sidebar-input{
+    margin-top: 10px;
+}
+.sidebar-input + .sidebar-input{
+    margin-top: -20px;
 }
 .sidebar-input-file{
     margin-bottom: 10px;
@@ -195,14 +204,110 @@ ul{
     border-radius: 5px;
     background-color: #f3f3f3;
     transition: all 0.3s;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 .side-bar--sound:hover{
-    transform: translateY(-2px) scale(1.1);
-}
-.side-bar--sound.selected{
-    background-color:rgb(168, 195, 222);
+    transform: translateY(-4px);
 }
 .slidebar-desc{
+    padding-top: 10px;
     text-align: center;
+}
+
+.sideBar-wrapper{
+    display: flex;
+    align-items: center;
+}
+.side-bar-img{
+    margin-right: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.side-bar-img:hover{
+    color: red;
+    transform: scale(1.1) translateY(-2px);
+}
+.side-del-bg{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.318);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 165vh;
+}
+.side-del-main{
+    margin-top: -850px;
+    color: #000000;
+    width: 25%;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.side-del-img{
+    font-size: 30px;
+}
+.side-del-main-title{
+    text-align: center;
+}
+.side-del-btn{
+    display: flex;
+    gap: 20px;
+}
+.side-del-btn button{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.side-del-btn button:hover{
+    transform: scale(1.1);
+}
+.SideBar-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.318);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 165vh;
+    z-index: 20000;
+}
+.SideBar-main{
+    margin-top: -850px;
+    width: 25%;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;  
+    position: relative;
+}
+.SideBar-x{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.SideBar-x:hover{
+    transform: scale(1.1) translateY(-2px);
+}
+.SlideBar-sound{
+    margin-top: -500px;
 }
