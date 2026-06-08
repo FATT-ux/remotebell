@@ -172,6 +172,7 @@ ul{
 .side-btn{
     background-color: blue;
     padding: 5px;
+    margin-top: 10px;
 }
 .close-sidebar{
     float: right;
@@ -181,4 +182,27 @@ ul{
 }
 .close-sidebar:hover{
     transform: scale(1.2) translateY(-2px);
+}
+.btn-side{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.side-bar-audio{
+    width: 100%;
+}
+.side-bar--sound{
+    width: 90%;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.side-bar--sound:hover{
+    transform: translateY(-2px) scale(1.1);
+}
+.side-bar--sound.selected{
+    background-color:rgb(168, 195, 222);
+}
+.slidebar-desc{
+    text-align: center;
 }

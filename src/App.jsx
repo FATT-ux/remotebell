@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from "./components/Header";
 import AlarmComponent from "./components/AlarmComponent";
 import Schedule from "./components/Schedule/Schedule";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/SideBar/SideBar";
 
 function App () {
     const [onSideBar, setOnSideBar] = useState(false)
